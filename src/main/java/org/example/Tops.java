@@ -8,7 +8,7 @@ public class Tops implements Garment {
     }
 
     @Override
-    public void displayCausal() {
+    public void displayCasual() {
         System.out.println("Casual Tops");
     }
 
