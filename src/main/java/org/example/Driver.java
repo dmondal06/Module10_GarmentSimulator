@@ -4,24 +4,21 @@ package org.example;
 // then press Enter. You can now see whitespace characters in your code.
 public class Driver {
     public static void main(String[] args) {
-        Garment professionalTop = new Tops();
-        Garment casualPant = new Pants();
-        Garment partyShoe = new Shoes();
+        GarmentFactory formalFactory = new FormalGarmentFactory();
+        GarmentFactory casualFactory = new CasualGarmentFactory();
 
-        // Display professional, casual, and party garments
-        System.out.println("Professional Variant:");
-        professionalTop.displayProfessional();
-        casualPant.displayProfessional();
-        partyShoe.displayProfessional();
+        Tops formalTops = formalFactory.createTops();
+        Pants formalPants = formalFactory.createPants();
+        Shoes formalShoes = formalFactory.createShoes();
 
-        System.out.println("\nCasual Variant:");
-        professionalTop.displayCasual();
-        casualPant.displayCasual();
-        partyShoe.displayCasual();
+        Tops casualTops = casualFactory.createTops();
+        Pants casualPants = casualFactory.createPants();
+        Shoes casualShoes = casualFactory.createShoes();
 
-        System.out.println("\nParty Variant:");
-        professionalTop.displayParty();
-        casualPant.displayParty();
-        partyShoe.displayParty();
+        System.out.println("Professional Outfit: " + formalTops.getVariant() + ", "
+                + formalPants.getVariant() + ", " + formalShoes.getVariant());
+        System.out.println("Casual Outfit: " + casualTops.getVariant() + ", "
+                + casualPants.getVariant() + ", " + casualShoes.getVariant());
     }
-    }
+
+}
